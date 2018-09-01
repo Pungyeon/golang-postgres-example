@@ -1,0 +1,13 @@
+> docker exec -it $(docker ps -q) bash
+> psql -U postgres
+
+# CREATE DATABASE test
+# CREATE TABLE todo (
+    uid serial NOT NULL,
+    title character varying(100) NOT NULL,
+    description character varying(100) NOT NULL,
+    username character varying(100) NOT NULL,
+    completed BOOLEAN NOT NULL,
+    CONSTRAINT userinfo_pkey PRIMARY KEY (uid)
+)
+WITH (OIDS=FALSE)
